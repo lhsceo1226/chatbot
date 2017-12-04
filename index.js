@@ -12,11 +12,11 @@ restService.use(bodyParser.urlencoded({
 restService.use(bodyParser.json());
 
 restService.post('/echo', function(req, res) {
-    var speech = req.body.result && req.body.result.parameters && req.body.result.parameters.cianText ? req.body.result.parameters.echoText : "Seems like some problem. Speak again."
+    var speech = req.body.result && req.body.result.parameters && req.body.result.parameters.cianText ? req.body.result.parameters.cianText : "Seems like some problem. Speak again."
     return res.json({
         speech: speech,
         displayText: speech,
-        source: 'webhook-echo-sample'
+        source: 'webhook-cian-sample'
     });
 });
 
@@ -33,7 +33,7 @@ restService.post('/music', function(req, res) {
     return res.json({
         speech: speech,
         displayText: speech,
-        source: 'webhook-echo-sample'
+        source: 'webhook-cian-sample'
     });
 });
 
@@ -41,7 +41,7 @@ restService.post('/video', function(req, res) {
     return res.json({
         speech: '<speak>  <audio src="https://www.youtube.com/watch?v=VX7SSnvpj-8">did not get your MP3 audio file</audio></speak>',
         displayText: '<speak>  <audio src="https://www.youtube.com/watch?v=VX7SSnvpj-8">did not get your MP3 audio file</audio></speak>',
-        source: 'webhook-echo-sample'
+        source: 'webhook-cian-sample'
     });
 });
 
@@ -94,7 +94,7 @@ restService.post('/slack-test', function(req, res) {
     return res.json({
         speech: "speech",
         displayText: "speech",
-        source: 'webhook-echo-sample',
+        source: 'webhook-cian-sample',
         data: {
             "slack": slack_message
         }
